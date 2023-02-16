@@ -26,16 +26,16 @@ msgstr "Konfiguration des Plugins"
 
 #: front/report.form.php:66
 msgid "Rights management by report"
-msgstr "Rechtevergabe nach Report"
+msgstr "Rechtevergabe per Bericht"
 
 #: inc/autoreport.class.php:451
 msgid "Search criteria"
-msgstr ""
+msgstr "Suchkriterium"
 
 #: inc/dateintervalcriteria.class.php:150
 #: inc/timeintervalcriteria.class.php:110
 msgid "Date interval"
-msgstr ""
+msgstr "Datumsintervall"
 
 #: inc/dateintervalcriteria.class.php:152
 #: inc/timeintervalcriteria.class.php:112
@@ -52,11 +52,11 @@ msgstr ""
 
 #: inc/profile.class.php:52
 msgid "Rights management by profil"
-msgstr "Rechtevergabe"
+msgstr "Rechtevergabe per Profil"
 
 #: inc/profile.class.php:86
 msgid "Profils rights"
-msgstr "profil Rechte"
+msgstr "Profilrechte"
 
 #: inc/profile.class.php:112
 msgid "No right on Assistance / Statistics"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: report/applicationsbylocation/applicationsbylocation.php:47
 msgid "Applications"
-msgstr ""
+msgstr "Anwendungen"
 
 #: report/applicationsbylocation/applicationsbylocation.php:50
 #: report/softversioninstallations/softversioninstallations.php:48
@@ -87,23 +87,23 @@ msgstr "Computerstatus"
 #. TRANS: The name of the report = Duplicate computers
 #: report/doublons/doublons.php:44
 msgid "doublons_report_title"
-msgstr "Computer Duplikate"
+msgstr "Computerduplikate"
 
 #: report/doublons/doublons.php:79 report/doublons/doublons.php:377
 msgid "Duplicate computers"
-msgstr "Computer Duplikate"
+msgstr "Computerduplikate"
 
 #: report/doublons/doublons.php:261
 msgid "First computer"
-msgstr "Erster computer"
+msgstr "Erster Computer"
 
 #: report/doublons/doublons.php:262
 msgid "Second computer"
-msgstr "Zweiter computer"
+msgstr "Zweiter Computer"
 
 #: report/doublons/doublons.php:278 report/doublons/doublons.php:293
 msgid "Last inventory date"
-msgstr "Zu letzt inventarisiert"
+msgstr "zuletzt inventarisiert"
 
 #. TRANS: The name of the report = List all devices of a group, ordered by
 #. users
@@ -124,11 +124,11 @@ msgstr ""
 #. TRANS: The name of the report = History of last hardware's installations
 #: report/histohard/histohard.php:46
 msgid "histohard_report_title"
-msgstr "Historie der letzten Hardware Änderungen"
+msgstr "Historie der letzten Hardwareänderungen"
 
 #: report/histohard/histohard.php:53
 msgid "History of last hardware's installations"
-msgstr "Historie der letzten Hardware Änderungen"
+msgstr "Historie der letzten Hardwareänderungen"
 
 #: report/histohard/histohard.php:55
 msgid "Date of inventory"
@@ -145,11 +145,11 @@ msgstr "Liste beschränkt auf 100 Ereignisse und 21 Tage"
 #. TRANS: The name of the report = History of last software's installations
 #: report/histoinst/histoinst.php:47
 msgid "histoinst_report_title"
-msgstr "Historie der letzten Software Installationen"
+msgstr "Historie der letzten Softwareinstallationen"
 
 #: report/histoinst/histoinst.php:54
 msgid "History of last software's installations"
-msgstr "Historie der letzten Software Installationen"
+msgstr "Historie der letzten Softwareinstallationen"
 
 #: report/histoinst/histoinst.php:103
 msgid "The list is limited to 200 items and 21 days"
@@ -172,7 +172,7 @@ msgstr "Liste der abgelaufenen Lizenzen"
 
 #: report/licensesexpires/licensesexpires.php:42
 msgid "Valid to"
-msgstr ""
+msgstr "zulässig bis"
 
 #. TRANS: The name of the report = Detailed license report
 #: report/licenses/licenses.php:41
@@ -190,7 +190,7 @@ msgstr ""
 
 #: report/listequipmentbylocation/listequipmentbylocation.php:78
 msgid "Location not selected"
-msgstr ""
+msgstr "kein Standort ausgewählt"
 
 #. TRANS: The name of the report = List of groups and members
 #: report/listgroups/listgroups.php:41
@@ -236,7 +236,7 @@ msgstr "Unbekannt"
 
 #: report/pcsbyentity/pcsbyentity.php:288
 msgid "Selection of type is mandatory"
-msgstr ""
+msgstr "Auswahl des Typs notwendig"
 
 #. TRANS: The name of the report = Printers
 #: report/printers/printers.php:41
@@ -245,19 +245,19 @@ msgstr ""
 
 #: report/printers/printers.php:72
 msgid "Computers in the group"
-msgstr ""
+msgstr "Computer in der Gruppe"
 
 #: report/printers/printers.php:73
 msgid "Users in the group"
-msgstr ""
+msgstr "Nutzer in der Gruppe"
 
 #: report/printers/printers.php:76
 msgid "Computers in the location"
-msgstr ""
+msgstr "Computer am Standort"
 
 #: report/printers/printers.php:77
 msgid "Users in the location"
-msgstr ""
+msgstr "Nutzer am Standort"
 
 #. TRANS: The name of the report = Rule's catalog
 #: report/rules/rules.php:50 report/rules/rules.php:98
@@ -298,11 +298,11 @@ msgstr ""
 
 #: report/statticketsbyentity/statticketsbyentity.php:59
 msgid "Users count"
-msgstr ""
+msgstr "Nutzeranzahl"
 
 #: report/statticketsbyentity/statticketsbyentity.php:62
 msgid "Tickets count"
-msgstr ""
+msgstr "Ticketanzahl"
 
 #: report/statticketsbyentity/statticketsbyentity.php:65
 msgid "Older"
@@ -323,7 +323,7 @@ msgstr ""
 
 #: report/statusertask/statusertask.php:42
 msgid "Tasks created"
-msgstr ""
+msgstr "Aufgaben erzeugt"
 
 #: report/statusertask/statusertask.php:56
 msgid "Number created tasks"
@@ -336,11 +336,11 @@ msgstr ""
 
 #: report/transferreditems/transferreditems.php:68
 msgid "Source entity"
-msgstr ""
+msgstr "Quelleinheit"
 
 #: report/transferreditems/transferreditems.php:69
 msgid "Target entity"
-msgstr ""
+msgstr "Zeileinheit"
 
 #: report/transferreditems/transferreditems.php:70
 msgid "Transfert date"
@@ -353,4 +353,4 @@ msgstr ""
 
 #: report/zombies/zombies.php:45
 msgid "With no ticket"
-msgstr ""
+msgstr "ohne Ticket"
