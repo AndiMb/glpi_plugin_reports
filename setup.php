@@ -29,6 +29,8 @@
  --------------------------------------------------------------------------
 */
 
+use Glpi\Plugin\Hooks;
+
 include_once(Plugin::getPhpDir('reports')."/inc/function.php");
 
 define ("REPORTS_NO_ENTITY_RESTRICTION", 0);
@@ -55,6 +57,10 @@ function plugin_init_reports() {
    }
 
    $PLUGIN_HOOKS['menu_entry']['reports'] = false;
+
+   // Add specific files to add to the header : javascript or css
+   $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['reports'] = 'reports.js';
+   $PLUGIN_HOOKS[Hooks::ADD_CSS]['reports']        = 'reports.css';
 
    $rightreport = [];
    $rightstats  = [];

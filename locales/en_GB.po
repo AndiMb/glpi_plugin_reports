@@ -345,6 +345,11 @@ msgstr ""
 msgid "Transfert date"
 msgstr ""
 
+#. TRANS: The name of the report = Number of items by entity
+#: report/tudcomputerbyentity/tudcomputerbyentity.php:210
+msgid "tudcomputerbyentity_report_title"
+msgstr "Number of items by entity (TUD)"
+
 #. TRANS: The name of the report = Users with no right
 #: report/zombies/zombies.php:39
 msgid "zombies_report_title"
