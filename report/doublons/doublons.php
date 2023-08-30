@@ -50,7 +50,8 @@ $crits = [0 => Dropdown::EMPTY_VALUE,
           3 => __('Name')." + ".__('Model')." + ".__('Serial number'),
           4 => __('MAC address'),
           5 => __('IP address'),
-          6 => __('Inventory number')];
+          6 => __('Inventory number'),
+          7 => __('UUID')];
 
 if (isset($_GET["crit"])) {
    $crit = $_GET["crit"];
@@ -230,6 +231,11 @@ if ($crit == 5) { // Search Duplicate IP Address - From glpi_networking_ports
    if ($crit == 6) {
       $Sql .= " AND A.`otherserial` != ''
                 AND A.`otherserial` = B.`otherserial`";
+      $col = "";
+   } else if ($crit == 7) {
+      $Sql .= " AND A.`uuid` != ''
+                AND A.`uuid` = B.`uuid`";
+      $col = 'uuid';
    } else {
       if ($crit & 1) {
          $Sql .= " AND A.`name` != ''
@@ -240,8 +246,8 @@ if ($crit == 5) { // Search Duplicate IP Address - From glpi_networking_ports
                    AND A.`serial` = B.`serial`
                    AND A.`computermodels_id` = B.`computermodels_id`";
       }
+      $col = "";
    }
-   $col = "";
 }
 
 
@@ -272,7 +278,11 @@ if ($crit > 0) { // Display result
       "<th>" . __('Serial number') . "</th>" .
       "<th>" . __('Inventory number') . "</th>";
    if ($col) {
-      echo "<th>$col</th>";
+      if ($col == "uuid"){
+         echo "<th>".__("UUID", 'reports')."</th>";
+      } else {
+         echo "<th>$col</th>";
+      }
    }
    echo "<th>".__('Last inventory date', 'reports')."</th>";
 
@@ -287,7 +297,11 @@ if ($crit > 0) { // Display result
         "<th class='blue'>" . __('Serial number') . "</th>".
         "<th class='blue'>".__('Inventory number')."</th>";
    if ($col) {
-      echo "<th class='blue'>$col</th>";
+      if ($col == "uuid"){
+         echo "<th class='blue'>".__("UUID", 'reports')."</th>";
+      } else {
+         echo "<th class='blue'>$col</th>";
+      }
    }
    echo "<th class='blue'>".__('Last inventory date', 'reports')."</th>";
 
@@ -319,6 +333,8 @@ if ($crit > 0) { // Display result
          }
       }
       echo "<td class='b'>".$data["AID"]."</td>";
+      $uuid = '';
+      $lastInventory = '';
       if ($comp->getFromDB($data["AID"])) {
          echo "<td>";
          echo $comp->getLink(true);
@@ -328,15 +344,25 @@ if ($crit > 0) { // Display result
          echo Dropdown::getDropdownName("glpi_computermodels", $comp->getField('computermodels_id'));
          echo "</td><td>".$comp->getField('serial');
          echo "</td><td>".$comp->getField('otherserial')."</td>";
+         $uuid = $comp->getField('uuid');
+         if ($comp->getField('last_inventory_update')){
+            $lastInventory = $comp->getField('last_inventory_update');
+         }
       } else {
          echo "<td colspan='5'>".$data["Aname"]."</td>";
       }
       if ($col) {
-         echo "<td>" .$data["Aaddr"]. "</td>";
+         if ($uuid){
+            echo "<td>" .$uuid. "</td>";
+         } else {
+            echo "<td>" .$data["Aaddr"]. "</td>";
+         }
       }
       echo "<td>";
       if ($ocs_installed || $fi_installed) {
          echo getLastOcsUpdate($data['AID']);
+      } else if ($lastInventory){
+         echo $lastInventory;
       }
       echo "</td>";
       if ($canedit) {
@@ -348,6 +374,8 @@ if ($crit > 0) { // Display result
          }
       }
       echo "<td class='b blue'>".$data["BID"]."</td>";
+      $uuid = '';
+      $lastInventory = '';
       if ($comp->getFromDB($data["BID"])) {
          echo "<td class='blue'>";
          echo $comp->getLink(true);
@@ -357,15 +385,25 @@ if ($crit > 0) { // Display result
          echo Dropdown::getDropdownName("glpi_computermodels", $comp->getField('computermodels_id'));
          echo "</td><td class='blue'>".$comp->getField('serial');
          echo "</td><td class='blue'>".$comp->getField('otherserial')."</td>";
+         $uuid = $comp->getField('uuid');
+         if ($comp->getField('last_inventory_update')){
+            $lastInventory = $comp->getField('last_inventory_update');
+         }
       } else {
          echo "<td colspan='5' class='blue'>".$data["Aname"]."</td>";
       }
       if ($col) {
-         echo "<td class='blue'>" .$data["Baddr"]. "</td>";
+         if ($uuid){
+            echo "<td class='blue'>" .$uuid. "</td>";
+         } else {
+            echo "<td class='blue'>" .$data["Baddr"]. "</td>";
+         }
       }
       echo "<td class='blue'>";
       if ($ocs_installed || $fi_installed) {
          echo getLastOcsUpdate($data['BID']);
+      } else if ($lastInventory){
+         echo $lastInventory;
       }
       echo "</td>";
 
