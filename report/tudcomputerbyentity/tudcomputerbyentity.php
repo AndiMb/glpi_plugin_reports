@@ -150,9 +150,9 @@ function doStat ($table, $entity, $header, $level=0) {
    }
 
    if ($level == 0) {
-      echo "<tr data-depth='" . $level . "' class='tab_bg_2 tudexpand tudextended tudlevel" . $level . "'><td><span class='tudtoggle'></span>";
+      echo "<tr data-depth='" . $level . "' class='treecollapsed treevisible treelevel" . $level . "'><td><span class='treetoggle'></span>";
    } else {
-      echo "<tr data-depth='" . $level . "' class='tab_bg_2 tudexpand tudcollapsed tudlevel" . $level . "'><td><span class='tudtoggle'></span>";
+      echo "<tr data-depth='" . $level . "' class='treecollapsed treehidden treelevel" . $level . "'><td><span class='treetoggle'></span>";
    }
 
       if ($entity) {
@@ -256,8 +256,11 @@ echo "</div>\n";
 
 // --------------- Result -------------
 if (isset($_POST["type"]) && $_POST["type"] != '') {
-   echo "<table id='mytable' class='tab_cadre'>\n";
+   echo "<div class='card card-lg'>";
+   echo "<div class='table-responsive-lg'>";
+   echo "<table id='treetable' class='table table-hover'>\n";
 
+   echo "<thead>";
    echo "<tr><th>".__('Entity'). "</th>" .
          "<th>&nbsp;" . __('Total') . "&nbsp;</th>" .
          "<th>&nbsp;" . __('Own', 'reports') . "&nbsp;</th>";
@@ -273,13 +276,15 @@ if (isset($_POST["type"]) && $_POST["type"] != '') {
    //    echo "<th>&nbsp;" . $data["name"] . "&nbsp;</th>";
    // }
    echo "</tr>\n";
+   echo "</thead>";
+   echo "<tbody>";
 
    if (isset($_POST["sort"]) && ($_POST["sort"] > 0)) {
       doStatBis($dbu->getTableForItemType($_POST["type"]), $_SESSION["glpiactiveentities"], $header);
    } else {
       doStat($dbu->getTableForItemType($_POST["type"]), $_SESSION["glpiactive_entity"], $header);
    }
-   echo "</table></div>";
+   echo "</tbody></table></div></div></div>";
 } elseif (isset($_POST["type"]) && $_POST["type"] == '') {
    echo "<p class='center red'>".__('Selection of type is mandatory', 'reports')."</p>";
 }

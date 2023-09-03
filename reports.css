@@ -1,87 +1,51 @@
-/* table.treetable tr td span.marker:before {
-    content: "\0025CB";
-}
-
-.tab_bg_2 {
-    background: red;
-}
-
-table td {
-    border: 1px solid #eee;
-} */
-
-#page .tab_cadre .tudlevel1 td:first-child {
+.treelevel1 td:first-child {
     padding-left: 15px;
 }
 
-#page .tab_cadre .tudlevel2 td:first-child {
+.treelevel2 td:first-child {
     padding-left: 30px;
 }
 
-#page .tab_cadre .tudlevel3 td:first-child {
+.treelevel3 td:first-child {
     padding-left: 45px;
 }
 
-#page .tab_cadre .tudlevel4 td:first-child {
+.treelevel4 td:first-child {
     padding-left: 60px;
 }
 
-#page .tab_cadre .tudlevel5 td:first-child {
+.treelevel5 td:first-child {
     padding-left: 75px;
 }
 
-#page .tab_cadre .tudlevel6 td:first-child {
+.treelevel6 td:first-child {
     padding-left: 90px;
 }
 
-#page .tab_cadre .tudlevel7 td:first-child {
+.treelevel7 td:first-child {
     padding-left: 105px;
 }
 
-/* .tudcollapse span.tudtoggle::before {
-    content: "\0025BC  ";
-}
-
-.tudexpand span.tudtoggle::before {
-    content: "\0025BA  ";
-} */
-
-/* .tudcollapse span.tudtoggle::before {
-    content: "\00229F";
-    background: "../../pics/collapse.gif";
-    margin-right: 1em;
-}
-
-.tudexpand span.tudtoggle::before {
-    content: "\00229E";
-    background: "../../pics/expand.gif";
-    margin-right: 1em;
-} */
-
-.tudcollapse span.tudtoggle {
+.treeexpanded span.treetoggle {
     background: url("../../pics/collapse.gif");
     margin-right: 1em;
 }
 
-.tudexpand span.tudtoggle {
+.treecollapsed span.treetoggle {
     background: url("../../pics/expand.gif");
     margin-right: 1em;
 }
 
-.tudtoggle {
+.treetoggle {
     height: 9px;
     width: 9px;
     display: inline-block;
 }
 
-.tudcollapsed {
+.treehidden {
     display: none;
 }
 
-.tudextended {
+.treevisible {
     display: table-row;
-}
-
-#mytable{
-    width: 100%;
 }
