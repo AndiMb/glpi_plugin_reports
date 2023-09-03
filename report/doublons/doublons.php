@@ -262,7 +262,11 @@ if ($crit > 0) { // Display result
    if ($canedit) {
       Html::openMassiveActionsForm('massformComputer');
    }
-   echo "<table class='tab_cadrehov' cellpadding='5'>" .
+   // echo "<table class='tab_cadrehov' cellpadding='5'>" .
+   echo "<div class='card'>" .
+      "<div class='table-responsive'>" .
+      "<table class='table table-hover'>" .
+      "<thead class='sticky-top'>" . 
       "<tr><th colspan='$colspan'>" . __('First computer', 'reports') . "</th>" .
       "<th class='blue' colspan='$colspan'>" . __('Second computer', 'reports')."</th></tr>\n" .
       "<tr>";
@@ -306,6 +310,8 @@ if ($crit > 0) { // Display result
    echo "<th class='blue'>".__('Last inventory date', 'reports')."</th>";
 
    echo "</tr>\n";
+   echo "</thead>";
+   echo "<tbody>";
 
 
    if (method_exists('DBConnection', 'getReadConnection')) { // In 0.80
@@ -416,7 +422,10 @@ if ($crit > 0) { // Display result
       echo __('No item found');
    }
    echo "</td></tr>\n";
+   echo "</tbody>";
    echo "</table>";
+   echo "</div>";
+   echo "</div>";
    if ($canedit) {
       if ($i) {
          $massiveactionparams = ['num_displayed'    => $i,
